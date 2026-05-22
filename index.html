@@ -1,239 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Lampy ❤️ Rose</title>
-<link rel="stylesheet" href="style.css">
+
+<title>Lampy ❤️ Rose Universe</title>
+
+<link rel="stylesheet"
+href="style.css">
+
 </head>
 
 <body>
 
 <div class="stars"></div>
 
-<nav>
+<div class="portal">
 
-<div class="logo">
-Lampy ❤️ Rose ❤️
-</div>
+<h1>
 
-<div class="nav">
+Lampy
 
-<button onclick="showTab('home')">🏠 Home</button>
+<span class="heart">
 
-<button onclick="showTab('games')">🎮 Games</button>
+❤️
 
-<button onclick="showTab('memories')">📸 Memories</button>
+</span>
 
-<button onclick="showTab('music')">🎵 Music</button>
+Rose
 
-<button onclick="showTab('secret')">✨ Secret</button>
+</h1>
 
-</div>
+<p>
 
-</nav>
+Choose a world...
 
+</p>
 
-<div id="home" class="page active">
+<div class="worlds">
 
-<h1>Lampy ❤️ Rose</h1>
+<a href="home.html">
 
-<p>Our Tiny Universe</p>
+<div class="world">
 
-<div class="grid">
+🏠
 
-<div class="card">
-⏰
-<div id="clock"></div>
-</div>
+<h2>Home</h2>
 
-<div class="card">
-💖 Love:10000%
-</div>
-
-<div class="card">
-📅
-<div id="date"></div>
-</div>
+<p>
+Our universe
+</p>
 
 </div>
 
-</div>
+</a>
 
 
-<div id="games" class="page">
+<a href="games.html">
 
-<h2>Fun Zone 🎮</h2>
+<div class="world">
 
-<div class="grid">
+🎮
 
-<div class="card" onclick="playGame('Spin Bottle points at YOU 😭')">
-🎲 Spin Bottle
-</div>
+<h2>Games</h2>
 
-<div class="card" onclick="playGame('Truth: Favorite memory?')">
-🎯 Truth Or Dare
-</div>
-
-<div class="card" onclick="playGame('Love score: 99999% ❤️')">
-💘 Love Calculator
-</div>
-
-<div class="card" onclick="playGame('Achievement unlocked: Soulmates')">
-🎁 Mystery Box
-</div>
+<p>
+Fun dimension
+</p>
 
 </div>
 
-<div id="result"></div>
+</a>
+
+
+<a href="memories.html">
+
+<div class="world">
+
+📸
+
+<h2>Memories</h2>
+
+<p>
+Photo galaxy
+</p>
 
 </div>
 
+</a>
 
-<div id="memories" class="page">
 
-<h2>Memories 📸</h2>
+<a href="music.html">
 
-<div class="grid">
+<div class="world">
 
-<div class="card">📷 First Chat</div>
+🎵
 
-<div class="card">✨ First Chaos</div>
+<h2>Music</h2>
 
-<div class="card">💞 First Memory</div>
+<p>
+Late night room
+</p>
 
 </div>
 
+</a>
+
+
+<a href="secret.html">
+
+<div class="world">
+
+✨
+
+<h2>Secret</h2>
+
+<p>
+Hidden chamber
+</p>
+
 </div>
 
-
-
-<div id="music" class="page">
-
-<h2>Music 🎵</h2>
-
-<div class="grid">
-
-<div class="card">
-🎵 Favorite Song
-</div>
-
-<div class="card">
-🌙 Night Vibes
-</div>
+</a>
 
 </div>
 
 </div>
-
-
-<div id="secret" class="page">
-
-<input
-id="pass"
-placeholder="password"
-/>
-
-<button onclick="unlock()">
-Unlock
-</button>
-
-<h2 id="secretText"></h2>
-
-</div>
-
-
-<script>
-
-function showTab(tab){
-
-document
-.querySelectorAll(
-".page"
-)
-
-.forEach(x=>
-x.classList.remove(
-"active"
-))
-
-document
-.getElementById(tab)
-.classList.add(
-"active"
-)
-
-}
-
-
-function playGame(text){
-
-document
-.getElementById(
-"result"
-)
-
-.innerText=text
-
-}
-
-
-function unlock(){
-
-let p=
-document
-.getElementById(
-"pass"
-).value
-
-if(
-p==="lampyrose"
-){
-
-document
-.getElementById(
-"secretText"
-)
-
-.innerText=
-
-"😭❤️ Secret unlocked"
-
-}
-
-else{
-
-document
-.getElementById(
-"secretText"
-)
-
-.innerText=
-
-"wrong password"
-
-}
-
-}
-
-
-setInterval(()=>{
-
-document
-.getElementById(
-"clock"
-).innerText=
-new Date()
-.toLocaleTimeString()
-
-document
-.getElementById(
-"date"
-).innerText=
-new Date()
-.toDateString()
-
-},1000)
-
-</script>
 
 </body>
 </html>
