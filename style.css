@@ -2,14 +2,14 @@ body{
 
 margin:0;
 
+font-family:Arial;
+
 background:
 linear-gradient(
 black,
 #160022,
 black
 );
-
-font-family:Arial;
 
 color:white;
 
@@ -38,25 +38,15 @@ rgba(255,255,255,.05);
 backdrop-filter:
 blur(20px);
 
-z-index:1000;
-
-}
-
-.logo{
-
-font-size:30px;
-
-font-weight:bold;
-
 }
 
 .nav button{
 
-margin-right:8px;
+margin-right:10px;
+
+padding:12px;
 
 border:none;
-
-padding:13px;
 
 border-radius:999px;
 
@@ -73,8 +63,7 @@ cursor:pointer;
 
 display:none;
 
-padding:
-140px 50px;
+padding:140px 60px;
 
 height:100vh;
 
@@ -86,18 +75,14 @@ overflow:auto;
 
 display:block;
 
-animation:
-fade .7s;
-
 }
 
-.heroGrid,
 .grid{
 
 display:grid;
 
 grid-template-columns:
-repeat(4,1fr);
+repeat(3,1fr);
 
 gap:20px;
 
@@ -109,10 +94,12 @@ margin-top:30px;
 
 padding:40px;
 
-border-radius:30px;
+border-radius:25px;
 
 background:
 rgba(255,255,255,.08);
+
+cursor:pointer;
 
 transition:.5s;
 
@@ -121,30 +108,10 @@ transition:.5s;
 .card:hover{
 
 transform:
-translateY(-8px);
+translateY(-10px);
 
 box-shadow:
 0 0 30px hotpink;
-
-}
-
-.heart{
-
-display:inline-block;
-
-animation:
-beat 1s infinite;
-
-}
-
-@keyframes beat{
-
-50%{
-
-transform:
-scale(1.4)
-
-}
 
 }
 
@@ -153,6 +120,7 @@ scale(1.4)
 position:fixed;
 
 width:100%;
+
 height:100%;
 
 z-index:-1;
@@ -170,18 +138,12 @@ background-size:
 
 }
 
-@keyframes fade{
+#result{
 
-from{
+margin-top:30px;
 
-opacity:0
+font-size:30px;
 
-}
-
-to{
-
-opacity:1
-
-}
+color:pink;
 
 }
