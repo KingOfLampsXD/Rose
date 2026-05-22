@@ -8,7 +8,6 @@
 <body>
 
 <div class="stars"></div>
-<div id="hearts"></div>
 
 <div class="main">
 
@@ -18,20 +17,43 @@ Lampy
 Rose
 </h1>
 
-<p>Our tiny universe</p>
+<p class="sub">
+Our tiny universe
+</p>
 
 <div class="typing">
-<span id="text"></span>
+<span id="text">
+Forever together...
+</span>
 </div>
 
-<div class="cards">
+<div class="tabs">
 
-<div class="card">
-⏰ <span id="clock"></span>
+<button onclick="showTab('home')" class="tab">🏠 Home</button>
+
+<button onclick="showTab('memories')" class="tab">📸 Memories</button>
+
+<button onclick="showTab('music')" class="tab">🎵 Music</button>
+
+<button onclick="showTab('letters')" class="tab">💌 Letters</button>
+
+<button onclick="showTab('games')" class="tab">🎮 Games</button>
+
+<button onclick="showTab('night')" class="tab">🌙 Night</button>
+
+<button onclick="showTab('secret')" class="tab">✨ Secret</button>
+
 </div>
+
+
+<div id="home" class="section active">
 
 <div class="card">
 💖 Love: 10000%
+</div>
+
+<div class="card">
+⏰ <span id="clock"></span>
 </div>
 
 <div class="card">
@@ -39,41 +61,141 @@ Rose
 </div>
 
 <div class="card">
-❤️ Forever Mode
+🤗 Total Hugs: 99999
 </div>
 
 </div>
 
-<button onclick="surprise()">
-Open Surprise ✨
+
+<div id="memories" class="section">
+
+<div class="card">📸 First chat</div>
+
+<div class="card">✨ First chaos</div>
+
+<div class="card">💞 First memory</div>
+
+<div class="card">🌌 Tiny universe began</div>
+
+</div>
+
+
+<div id="music" class="section">
+
+<div class="card">🎵 Favorite song #1</div>
+
+<div class="card">🎶 Favorite song #2</div>
+
+<div class="card">💿 Couple playlist</div>
+
+<div class="card">🎧 Late night vibes</div>
+
+</div>
+
+
+<div id="letters" class="section">
+
+<div class="card">
+💌 "I choose you."
+</div>
+
+<div class="card">
+❤️ "Soulmate unlocked."
+</div>
+
+<div class="card">
+😭 "Favorite chaos forever."
+</div>
+
+</div>
+
+
+<div id="games" class="section">
+
+<div class="card">🎲 Spin Bottle</div>
+
+<div class="card">❤️ Love Calculator</div>
+
+<div class="card">😘 Kiss Counter</div>
+
+<div class="card">🤗 Hug Counter</div>
+
+<div class="card">🎯 Truth or Dare</div>
+
+<div class="card">🎮 Rock Paper Scissors</div>
+
+<div class="card">💘 Who Loves More</div>
+
+<div class="card">🎁 Mystery Box</div>
+
+<div class="card">🎉 Emoji Challenge</div>
+
+</div>
+
+
+<div id="night" class="section">
+
+<div class="card">
+🌙 Late night mode
+</div>
+
+<div class="card">
+⭐ "Stay a little longer."
+</div>
+
+<div class="card">
+☁️ Sleepy cuddles mode
+</div>
+
+</div>
+
+
+<div id="secret" class="section">
+
+<input
+id="pass"
+placeholder="Password"
+/>
+
+<button onclick="unlock()">
+Unlock
 </button>
 
-<div id="popup"></div>
+<div id="secretText">
 
 </div>
+
+</div>
+
+
+</div>
+
 
 <script>
 
 const words=[
+
 "Forever together...",
 "Our memories...",
 "Our chaos...",
 "Our world...",
 "You + Me = Infinity"
-];
 
-let i=0;
+]
+
+let i=0
 
 setInterval(()=>{
 
 document.getElementById(
 "text"
 ).innerText=
-words[i];
+words[i]
 
-i=(i+1)%words.length;
+i=(i+1)%words.length
 
-},2000);
+},2000)
+
 
 setInterval(()=>{
 
@@ -81,64 +203,70 @@ document.getElementById(
 "clock"
 ).innerText=
 new Date()
-.toLocaleTimeString();
+.toLocaleTimeString()
 
 document.getElementById(
 "date"
 ).innerText=
 new Date()
-.toDateString();
+.toDateString()
 
-},1000);
+},1000)
 
-function surprise(){
 
-const msgs=[
+function showTab(tab){
 
-"I choose you ❤️",
-"You're my favorite chaos 😭",
-"Secret hug unlocked 🤗",
-"Achievement: Soulmate"
+document
+.querySelectorAll(
+".section"
+)
 
-];
+.forEach(x=>
+x.classList.remove(
+"active"
+))
 
-document.getElementById(
-"popup"
-).innerText=
-msgs[Math.floor(
-Math.random()*msgs.length
-)];
+document
+.getElementById(tab)
+.classList.add(
+"active"
+)
 
 }
 
-document.addEventListener(
-"click",
-e=>{
 
-let h=
-document.createElement(
-"div"
-);
+function unlock(){
 
-h.innerHTML="❤️";
+let p=
+document
+.getElementById(
+"pass"
+).value
 
-h.className="float";
+if(
+p=="lampyrose"
+){
 
-h.style.left=
-e.pageX+"px";
+document
+.getElementById(
+"secretText"
+)
 
-h.style.top=
-e.pageY+"px";
+innerHTML=
 
-document.body.appendChild(h);
+"💖 Secret unlocked: I choose you forever 😭❤️"
 
-setTimeout(()=>{
+}
 
-h.remove()
+else{
 
-},2000)
+alert(
+"wrong password 😭"
+)
 
-})
+}
+
+}
 
 </script>
 
