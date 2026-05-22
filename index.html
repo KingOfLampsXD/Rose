@@ -1,57 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>Two Hearts ❤️</title>
+<title>Lampy ❤️ Rose</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <div class="stars"></div>
+<div id="hearts"></div>
 
 <div class="main">
 
-<h1 class="title">
-❤️ Two Hearts ❤️
+<h1>
+Lampy
+<span class="beat">❤️</span>
+Rose
 </h1>
 
-<p class="sub">
-A world hidden from everyone else.
-Only us.
-</p>
+<p>Our tiny universe</p>
 
-<button onclick="openWorld()">
-Enter Our Universe ✨
+<div class="typing">
+<span id="text"></span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+⏰ <span id="clock"></span>
+</div>
+
+<div class="card">
+💖 Love: 10000%
+</div>
+
+<div class="card">
+📅 <span id="date"></span>
+</div>
+
+<div class="card">
+❤️ Forever Mode
+</div>
+
+</div>
+
+<button onclick="surprise()">
+Open Surprise ✨
 </button>
+
+<div id="popup"></div>
 
 </div>
 
 <script>
 
-function openWorld(){
+const words=[
+"Forever together...",
+"Our memories...",
+"Our chaos...",
+"Our world...",
+"You + Me = Infinity"
+];
 
-document.body.innerHTML=`
+let i=0;
 
-<div class="inside">
+setInterval(()=>{
 
-<h1>💖 Welcome Back 💖</h1>
+document.getElementById(
+"text"
+).innerText=
+words[i];
 
-<p>
-No matter where we go...
-we somehow end up here.
-</p>
+i=(i+1)%words.length;
 
-<div class="heart">
-❤️
-</div>
+},2000);
 
-</div>
+setInterval(()=>{
 
-`;
+document.getElementById(
+"clock"
+).innerText=
+new Date()
+.toLocaleTimeString();
+
+document.getElementById(
+"date"
+).innerText=
+new Date()
+.toDateString();
+
+},1000);
+
+function surprise(){
+
+const msgs=[
+
+"I choose you ❤️",
+"You're my favorite chaos 😭",
+"Secret hug unlocked 🤗",
+"Achievement: Soulmate"
+
+];
+
+document.getElementById(
+"popup"
+).innerText=
+msgs[Math.floor(
+Math.random()*msgs.length
+)];
 
 }
+
+document.addEventListener(
+"click",
+e=>{
+
+let h=
+document.createElement(
+"div"
+);
+
+h.innerHTML="❤️";
+
+h.className="float";
+
+h.style.left=
+e.pageX+"px";
+
+h.style.top=
+e.pageY+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+
+h.remove()
+
+},2000)
+
+})
 
 </script>
 
