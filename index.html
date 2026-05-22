@@ -1,146 +1,122 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>Lampy ❤️ Rose</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
 <div class="stars"></div>
 
 <nav>
-<div class="logo">Lampy ❤️ Rose</div>
 
-<div class="navlinks">
-<button onclick="show('home')">🏠 Home</button>
-<button onclick="show('games')">🎮 Games</button>
-<button onclick="show('memories')">📸 Memories</button>
-<button onclick="show('music')">🎵 Music</button>
-<button onclick="show('secret')">✨ Secret</button>
+<div class="logo">
+
+Lampy ❤️ Rose
+
 </div>
+
+<div class="nav">
+
+<button onclick="showTab('home')">
+🏠 Home
+</button>
+
+<button onclick="showTab('games')">
+🎮 Games
+</button>
+
+<button onclick="showTab('memories')">
+📸 Memories
+</button>
+
+<button onclick="showTab('music')">
+🎵 Music
+</button>
+
+<button onclick="showTab('dashboard')">
+💕 Dashboard
+</button>
+
+<button onclick="showTab('secret')">
+✨ Secret
+</button>
+
+</div>
+
 </nav>
 
 
-<section id="home" class="page active">
+<section
+id="home"
+class="page active"
+>
 
-<h1>Lampy ❤️ Rose</h1>
+<h1>
+Lampy
+<span class="heart">
+❤️
+</span>
+Rose
+</h1>
 
-<p>Our Tiny Universe 💖</p>
+<p>
+Our Tiny Universe
+</p>
 
-<div class="heroCards">
+<div class="heroGrid">
 
-<div class="box">
+<div class="card">
+
 ⏰
-<div id="clock"></div>
+
+<div id="clock">
+
+Loading...
+
 </div>
 
-<div class="box">
-💖 Love:10000%
 </div>
 
-<div class="box">
+<div class="card">
+
 📅
-<div id="date"></div>
-</div>
 
-<div class="box">
-❤️ Days Together: Infinity
-</div>
+<div id="date">
 
-</div>
+Loading...
 
-</section>
-
-
-<section id="games" class="page">
-
-<h2>Fun Zone 🎮</h2>
-
-<div class="grid">
-
-<div class="game" onclick="spinBottle()">
-🎲 Spin Bottle
-</div>
-
-<div class="game" onclick="loveCalc()">
-💘 Love Calculator
-</div>
-
-<div class="game" onclick="truthDare()">
-🎯 Truth or Dare
-</div>
-
-<div class="game" onclick="hugCounter()">
-🤗 Hug Counter
-</div>
-
-<div class="game" onclick="coinFlip()">
-🪙 Coin Flip
-</div>
-
-<div class="game" onclick="emojiChallenge()">
-🎉 Emoji Challenge
-</div>
-
-<div class="game" onclick="mysteryBox()">
-🎁 Mystery Box
-</div>
-
-<div class="game" onclick="rps()">
-✊ Rock Paper Scissors
 </div>
 
 </div>
 
-<div id="result"></div>
+<div class="card">
 
-</section>
+💖 Love
 
+<div>
 
+10000%
 
-<section id="memories" class="page">
-
-<h2>Our Memories 📸</h2>
-
-<div class="grid">
-
-<div class="game">
-📷 First Chat
-</div>
-
-<div class="game">
-💞 First Memory
-</div>
-
-<div class="game">
-✨ First Chaos
-</div>
-
-<div class="game">
-🌌 Tiny Universe Began
 </div>
 
 </div>
 
-</section>
+<div class="card">
 
+🤗 Hugs
 
-<section id="music" class="page">
+<div id="hugCount">
 
-<h2>Our Music 🎵</h2>
+0
 
-<div class="grid">
-
-<div class="game">
-🎧 Late Night Vibes
 </div>
 
-<div class="game">
-💿 Playlist
-</div>
-
-<div class="game">
-🎵 Favorite Song
 </div>
 
 </div>
@@ -149,185 +125,139 @@
 
 
 
-<section id="secret" class="page">
+<section
+id="games"
+class="page"
+>
 
-<h2>Secret Room ✨</h2>
+<h2>
+
+🎮 Fun Zone
+
+</h2>
+
+<div
+class="grid"
+id="gamesGrid"
+>
+
+</div>
+
+</section>
+
+
+
+<section
+id="memories"
+class="page"
+>
+
+<h2>
+
+📸 Memories
+
+</h2>
+
+<div
+class="grid"
+id="memoryGrid"
+>
+
+</div>
+
+</section>
+
+
+
+<section
+id="music"
+class="page"
+>
+
+<h2>
+
+🎵 Music
+
+</h2>
+
+<div
+class="grid"
+id="musicGrid"
+>
+
+</div>
+
+</section>
+
+
+
+<section
+id="dashboard"
+class="page"
+>
+
+<h2>
+
+💕 Couple Dashboard
+
+</h2>
+
+<div
+class="grid"
+id="dashboardGrid"
+>
+
+</div>
+
+</section>
+
+
+
+<section
+id="secret"
+class="page"
+>
+
+<h2>
+
+✨ Secret Room
+
+</h2>
 
 <input
 id="pass"
 placeholder="password"
 />
 
-<button onclick="unlock()">
+<button
+onclick="unlock()"
+>
+
 Unlock
+
 </button>
 
-<h2 id="secretText"></h2>
+<h3
+id="secretText"
+>
+
+</h3>
 
 </section>
 
 
+<script src="games.js"></script>
 
-<script>
+<script src="memories.js"></script>
 
-function show(tab){
+<script src="music.js"></script>
 
-document
-.querySelectorAll(".page")
-.forEach(
-x=>x.classList.remove(
-"active"
-))
+<script src="dashboard.js"></script>
 
-document
-.getElementById(tab)
-.classList.add(
-"active"
-)
+<script src="secret.js"></script>
 
-}
-
-
-setInterval(()=>{
-
-clock.innerText=
-new Date()
-.toLocaleTimeString()
-
-date.innerText=
-new Date()
-.toDateString()
-
-},1000)
-
-
-
-function unlock(){
-
-if(
-pass.value==
-"lampyrose"
-){
-
-secretText.innerText=
-"😭❤️ Secret unlocked: I choose you forever"
-
-}
-
-else{
-
-secretText.innerText=
-"wrong password"
-
-}
-
-}
-
-
-function random(a){
-
-return a[
-Math.floor(
-Math.random()*
-a.length
-)]
-
-}
-
-
-
-function spinBottle(){
-
-result.innerText=
-"Bottle points at: YOU 😭"
-
-}
-
-function loveCalc(){
-
-result.innerText=
-"Lampy ❤️ Rose = "+
-(Math.floor(
-Math.random()*100
-)+9000)+"%"
-
-}
-
-function truthDare(){
-
-result.innerText=
-random([
-
-"Truth: first thing you noticed?",
-"Dare: send a hug rn 🤗",
-"Truth: favorite memory?",
-"Dare: compliment time"
-
-])
-
-}
-
-let hugs=0
-
-function hugCounter(){
-
-hugs++
-
-result.innerText=
-"Hugs: "+hugs+" 🤗"
-
-}
-
-
-function coinFlip(){
-
-result.innerText=
-random([
-"Heads",
-"Tails"
-])
-
-}
-
-function emojiChallenge(){
-
-result.innerText=
-random([
-"😭❤️🔥",
-"👀💖✨",
-"🤗🌙💞"
-])
-
-}
-
-function mysteryBox(){
-
-result.innerText=
-random([
-
-"Secret Kiss Coupon 😭",
-"100 Hugs Reward",
-"Achievement: Soulmate"
-
-])
-
-}
-
-
-function rps(){
-
-result.innerText=
-random([
-
-"You won ✨",
-"You lost 😭",
-"Tie"
-
-])
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
