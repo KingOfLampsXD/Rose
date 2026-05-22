@@ -1,13 +1,15 @@
 body{
 
 margin:0;
-font-family:Arial;
+
 background:
 linear-gradient(
 black,
-#180026,
+#160022,
 black
 );
+
+font-family:Arial;
 
 color:white;
 
@@ -23,20 +25,20 @@ top:0;
 
 width:100%;
 
+padding:20px;
+
 display:flex;
 
 justify-content:
 space-between;
 
-padding:20px;
-
 background:
-rgba(255,255,255,.06);
+rgba(255,255,255,.05);
 
 backdrop-filter:
 blur(20px);
 
-z-index:100;
+z-index:1000;
 
 }
 
@@ -48,13 +50,13 @@ font-weight:bold;
 
 }
 
-.navlinks button{
+.nav button{
 
-margin-right:10px;
-
-padding:12px;
+margin-right:8px;
 
 border:none;
+
+padding:13px;
 
 border-radius:999px;
 
@@ -71,11 +73,8 @@ cursor:pointer;
 
 display:none;
 
-padding-top:120px;
-
-padding-left:60px;
-
-padding-right:60px;
+padding:
+140px 50px;
 
 height:100vh;
 
@@ -87,22 +86,26 @@ overflow:auto;
 
 display:block;
 
+animation:
+fade .7s;
+
 }
 
-.heroCards{
+.heroGrid,
+.grid{
 
 display:grid;
 
 grid-template-columns:
-1fr 1fr 1fr 1fr;
+repeat(4,1fr);
 
 gap:20px;
 
-margin-top:40px;
+margin-top:30px;
 
 }
 
-.box,.game{
+.card{
 
 padding:40px;
 
@@ -113,33 +116,35 @@ rgba(255,255,255,.08);
 
 transition:.5s;
 
-text-align:center;
-
-cursor:pointer;
-
 }
 
-.game:hover,
-.box:hover{
+.card:hover{
 
 transform:
-translateY(-10px);
+translateY(-8px);
 
 box-shadow:
 0 0 30px hotpink;
 
 }
 
-.grid{
+.heart{
 
-display:grid;
+display:inline-block;
 
-grid-template-columns:
-1fr 1fr 1fr 1fr;
+animation:
+beat 1s infinite;
 
-gap:20px;
+}
 
-margin-top:30px;
+@keyframes beat{
+
+50%{
+
+transform:
+scale(1.4)
+
+}
 
 }
 
@@ -152,6 +157,8 @@ height:100%;
 
 z-index:-1;
 
+opacity:.3;
+
 background-image:
 radial-gradient(
 white 1px,
@@ -161,36 +168,20 @@ transparent 1px
 background-size:
 50px 50px;
 
-opacity:.3;
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0
 
 }
 
-#result{
+to{
 
-margin-top:40px;
-
-font-size:30px;
-
-color:pink;
+opacity:1
 
 }
-
-input{
-
-padding:15px;
-
-border-radius:999px;
-
-border:none;
-
-}
-
-button{
-
-padding:14px;
-
-border:none;
-
-border-radius:999px;
 
 }
