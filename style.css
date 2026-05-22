@@ -7,125 +7,116 @@ font-family:Arial;
 background:
 linear-gradient(
 black,
-#160022,
+#170020,
 black
 );
 
-color:white;
+height:100vh;
 
 overflow:hidden;
 
-}
-
-nav{
-
-position:fixed;
-
-top:0;
-
-width:100%;
-
-padding:20px;
+color:white;
 
 display:flex;
 
-justify-content:
-space-between;
+justify-content:center;
 
-background:
-rgba(255,255,255,.05);
-
-backdrop-filter:
-blur(20px);
+align-items:center;
 
 }
 
-.nav button{
+.portal{
 
-margin-right:10px;
+text-align:center;
 
-padding:12px;
-
-border:none;
-
-border-radius:999px;
-
-background:
-hotpink;
-
-color:white;
-
-cursor:pointer;
+z-index:2;
 
 }
 
-.page{
+h1{
 
-display:none;
-
-padding:140px 60px;
-
-height:100vh;
-
-overflow:auto;
+font-size:90px;
 
 }
 
-.active{
+.heart{
 
-display:block;
+display:inline-block;
+
+animation:
+beat 1s infinite;
 
 }
 
-.grid{
+@keyframes beat{
+
+50%{
+
+transform:
+scale(1.4)
+
+}
+
+}
+
+.worlds{
 
 display:grid;
 
 grid-template-columns:
-repeat(3,1fr);
+repeat(5,1fr);
 
 gap:20px;
 
-margin-top:30px;
+margin-top:60px;
 
 }
 
-.card{
+a{
 
-padding:40px;
+text-decoration:none;
 
-border-radius:25px;
+color:white;
+
+}
+
+.world{
+
+padding:30px;
+
+border-radius:30px;
 
 background:
-rgba(255,255,255,.08);
+rgba(
+255,255,255,.08
+);
+
+backdrop-filter:
+blur(15px);
+
+transition:.6s;
 
 cursor:pointer;
 
-transition:.5s;
-
 }
 
-.card:hover{
+.world:hover{
 
 transform:
-translateY(-10px);
+translateY(-15px)
+scale(1.05);
 
 box-shadow:
-0 0 30px hotpink;
+0 0 50px hotpink;
 
 }
 
 .stars{
 
-position:fixed;
+position:absolute;
 
 width:100%;
-
 height:100%;
-
-z-index:-1;
-
-opacity:.3;
 
 background-image:
 radial-gradient(
@@ -136,14 +127,27 @@ transparent 1px
 background-size:
 50px 50px;
 
+opacity:.3;
+
+animation:
+move 80s linear infinite;
+
 }
 
-#result{
+@keyframes move{
 
-margin-top:30px;
+from{
 
-font-size:30px;
+transform:
+translateY(0)
 
-color:pink;
+}
+
+to{
+
+transform:
+translateY(800px)
+
+}
 
 }
