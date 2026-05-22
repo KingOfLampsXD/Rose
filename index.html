@@ -4,31 +4,20 @@
 <title>Lampy ❤️ Rose</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="stars"></div>
 
 <nav>
-
-<div class="logo">
-Lampy ❤️ Rose
-</div>
+<div class="logo">Lampy ❤️ Rose</div>
 
 <div class="navlinks">
-
 <button onclick="show('home')">🏠 Home</button>
-
 <button onclick="show('games')">🎮 Games</button>
-
 <button onclick="show('memories')">📸 Memories</button>
-
 <button onclick="show('music')">🎵 Music</button>
-
 <button onclick="show('secret')">✨ Secret</button>
-
 </div>
-
 </nav>
 
 
@@ -36,7 +25,7 @@ Lampy ❤️ Rose
 
 <h1>Lampy ❤️ Rose</h1>
 
-<p>Our tiny universe</p>
+<p>Our Tiny Universe 💖</p>
 
 <div class="heroCards">
 
@@ -46,8 +35,7 @@ Lampy ❤️ Rose
 </div>
 
 <div class="box">
-💖
-Love 10000%
+💖 Love:10000%
 </div>
 
 <div class="box">
@@ -56,8 +44,7 @@ Love 10000%
 </div>
 
 <div class="box">
-🤗
-99999 Hugs
+❤️ Days Together: Infinity
 </div>
 
 </div>
@@ -71,25 +58,44 @@ Love 10000%
 
 <div class="grid">
 
-<div class="game">🎲 Spin Bottle</div>
+<div class="game" onclick="spinBottle()">
+🎲 Spin Bottle
+</div>
 
-<div class="game">💘 Love Calculator</div>
+<div class="game" onclick="loveCalc()">
+💘 Love Calculator
+</div>
 
-<div class="game">🎯 Truth Or Dare</div>
+<div class="game" onclick="truthDare()">
+🎯 Truth or Dare
+</div>
 
-<div class="game">🤗 Hug Counter</div>
+<div class="game" onclick="hugCounter()">
+🤗 Hug Counter
+</div>
 
-<div class="game">😘 Kiss Counter</div>
+<div class="game" onclick="coinFlip()">
+🪙 Coin Flip
+</div>
 
-<div class="game">🎉 Emoji Challenge</div>
+<div class="game" onclick="emojiChallenge()">
+🎉 Emoji Challenge
+</div>
 
-<div class="game">🎁 Mystery Box</div>
+<div class="game" onclick="mysteryBox()">
+🎁 Mystery Box
+</div>
 
-<div class="game">🎮 Rock Paper Scissors</div>
+<div class="game" onclick="rps()">
+✊ Rock Paper Scissors
+</div>
 
 </div>
 
+<div id="result"></div>
+
 </section>
+
 
 
 <section id="memories" class="page">
@@ -98,13 +104,21 @@ Love 10000%
 
 <div class="grid">
 
-<div class="game">📷 First chat</div>
+<div class="game">
+📷 First Chat
+</div>
 
-<div class="game">✨ First chaos</div>
+<div class="game">
+💞 First Memory
+</div>
 
-<div class="game">💞 First memory</div>
+<div class="game">
+✨ First Chaos
+</div>
 
-<div class="game">🌌 Tiny universe began</div>
+<div class="game">
+🌌 Tiny Universe Began
+</div>
 
 </div>
 
@@ -117,15 +131,22 @@ Love 10000%
 
 <div class="grid">
 
-<div class="game">🎵 Favorite Song</div>
+<div class="game">
+🎧 Late Night Vibes
+</div>
 
-<div class="game">💿 Couple Playlist</div>
+<div class="game">
+💿 Playlist
+</div>
 
-<div class="game">🎧 Night Vibes</div>
+<div class="game">
+🎵 Favorite Song
+</div>
 
 </div>
 
 </section>
+
 
 
 <section id="secret" class="page">
@@ -141,9 +162,10 @@ placeholder="password"
 Unlock
 </button>
 
-<h3 id="secretText"></h3>
+<h2 id="secretText"></h2>
 
 </section>
+
 
 
 <script>
@@ -152,16 +174,16 @@ function show(tab){
 
 document
 .querySelectorAll(".page")
-
-.forEach(x=>
-x.classList.remove(
+.forEach(
+x=>x.classList.remove(
 "active"
 ))
 
 document
 .getElementById(tab)
 .classList.add(
-"active")
+"active"
+)
 
 }
 
@@ -179,16 +201,129 @@ new Date()
 },1000)
 
 
+
 function unlock(){
 
 if(
 pass.value==
 "lampyrose"
-)
+){
 
 secretText.innerText=
+"😭❤️ Secret unlocked: I choose you forever"
 
-"I choose you forever 😭❤️"
+}
+
+else{
+
+secretText.innerText=
+"wrong password"
+
+}
+
+}
+
+
+function random(a){
+
+return a[
+Math.floor(
+Math.random()*
+a.length
+)]
+
+}
+
+
+
+function spinBottle(){
+
+result.innerText=
+"Bottle points at: YOU 😭"
+
+}
+
+function loveCalc(){
+
+result.innerText=
+"Lampy ❤️ Rose = "+
+(Math.floor(
+Math.random()*100
+)+9000)+"%"
+
+}
+
+function truthDare(){
+
+result.innerText=
+random([
+
+"Truth: first thing you noticed?",
+"Dare: send a hug rn 🤗",
+"Truth: favorite memory?",
+"Dare: compliment time"
+
+])
+
+}
+
+let hugs=0
+
+function hugCounter(){
+
+hugs++
+
+result.innerText=
+"Hugs: "+hugs+" 🤗"
+
+}
+
+
+function coinFlip(){
+
+result.innerText=
+random([
+"Heads",
+"Tails"
+])
+
+}
+
+function emojiChallenge(){
+
+result.innerText=
+random([
+"😭❤️🔥",
+"👀💖✨",
+"🤗🌙💞"
+])
+
+}
+
+function mysteryBox(){
+
+result.innerText=
+random([
+
+"Secret Kiss Coupon 😭",
+"100 Hugs Reward",
+"Achievement: Soulmate"
+
+])
+
+}
+
+
+function rps(){
+
+result.innerText=
+random([
+
+"You won ✨",
+"You lost 😭",
+"Tie"
+
+])
 
 }
 
